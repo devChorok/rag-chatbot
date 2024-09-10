@@ -1,0 +1,15 @@
+flask
+sentence-transformers
+numpy
+PyPDF2
+pyllamacpp
+transformers
+huggingface_hub
+torch
+numpy
+sentencepiece
+protobuf
+safetensors
+accelerate
+llama-toolchain
+nltk

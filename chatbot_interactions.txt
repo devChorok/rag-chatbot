@@ -1,0 +1,258 @@
+# chunk_text_by_sentence
+Question: What is the main contribution of the Llama model?
+Response: Chunk of text: Particularly, Llama 2-Chat 7B model outperforms
+MPT-7B-chaton60%oftheprompts. Llama 2-Chat 34Bhasanoverallwinrateofmorethan75%against
+equivalently sized Vicuna-33B and Falcon 40B models. 18Figure12: Humanevaluationresults forLlama 2-Chat modelscomparedtoopen-andclosed-sourcemodels
+across ~4,000 helpfulness prompts with three raters per prompt. Thelargest Llama 2-Chat modeliscompetitivewithChatGPT. Llama 2-Chat 70Bmodelhasawinrateof
+36% and a tie rate of 31.5% relative to ChatGPT. Llama 2-Chat 70B model outperforms PaLM-bison chat
+model by a large percentage on our prompt set. More results and analysis is available in Section A.3.7. Inter-Rater Reliability (IRR). In our human evaluations, three different annotators provided independent
+assessments for each model generation comparison. High IRR scores (closer to 1.0) are typically seen as
+better from a data quality perspective, however, context is important. Highly subjective tasks like evaluating
+the overall helpfulness of LLM generations will usually have lower IRR scores than more objective labelling
+tasks. There arerelativelyfewpublicbenchmarksfor thesecontexts, sowefeelsharing ouranalysis herewill
+benefit the research community. We used Gwet’s AC1/2 statistic (Gwet, 2008, 2014) to measure inter-rater reliability (IRR), as we found it to
+bethemoststablemetricacrossdifferentmeasurementscenarios. Onthe7-pointLikertscalehelpfulness
+taskthatisusedinouranalysis,Gwet’sAC2scorevariesbetween 0.37and0.55dependingonthespecific
+modelcomparison. Weseescoresonthelowerendofthatrangeforratingsfrommodelcomparisonswith
+similar win rates to each other (like the Llama 2-Chat -70B-chat vs. ChatGPT comparison). We see scores on
+thehigherendofthatrangeforratingsfrommodelcomparisonswithamoreclearwinner(likethe Llama
+2-Chat-34b-chat vs. Falcon-40b-instruct). Limitations of human evaluations. While our results indicate that Llama 2-Chat is on par with ChatGPT
+on human evaluations, it is important to note that human evaluations have several limitations. •Byacademicandresearchstandards,wehavealargepromptsetof4kprompts. However,itdoesnotcover
+real-world usage of these models, which will likely cover a significantly larger number of use cases. •Diversity of the prompts could be another factor in our results. For example, our prompt set does not
+include any coding- or reasoning-related prompts. •We only evaluate the final generation of a multi-turn conversation. A more interesting evaluation could be
+to ask the models to complete a task and rate the overall experience with the model over multiple turns. •Humanevaluationforgenerativemodelsisinherentlysubjectiveandnoisy. Asaresult,evaluationona
+different set of prompts or with different instructions could result in different results. 194 Safety
+WARNING: this section contains examples of text that may be considered unsafe, offensive, or upsetting. In this section, we dive deeper into the important topic of safety measurements and mitigations. We first
+discussoursafetyinvestigationsintopretrainingdataandpretrainedmodels(Section4.1). Next,wedescribe
+theprocessofoursafetyalignment(Section4.2),explaininghowwecollectedsafety-relatedannotationsand
+utilizedSFTandRLHF,andpresentexperimentalresults. Then,wediscusstheredteamingweperformedto
+furtherunderstandandimprovemodelsafety(Section4.3). Finally,wepresentquantitativesafetyevaluations
+ofLlama 2-Chat (Section 4.4). We also share a model card in the Appendix, in Table 52. 4.1 Safety in Pretraining
+It is important to understand what is in the pretraining data both to increase transparency and to shed
+lightonrootcausesofpotentialdownstreamissues,suchaspotentialbiases. Thiscaninformwhat,ifany,
+downstream mitigations to consider, and help guide appropriate model use. In this section, we analyze the
+pretraining datafor distributionsof languages,demographic representations,and toxicity. Wealso present
+the results of testing the pretrained models on existing safety benchmarks. Steps Taken to Pretrain Responsibly. We followed Meta’s standard privacy and legal review processes for
+each dataset used in training. We did not use any Meta user data in training. We excluded data from certain
+sitesknowntocontainahighvolumeofpersonalinformationaboutprivateindividuals. Wemadeabest
+effort to train our models efficiently to reduce the carbon footprint of pretraining (Section 2.2.1). Sharing our
+modelsbroadlywillreducetheneedforotherstotrainsimilarmodels. Noadditionalfilteringwasconducted
+onthedatasets,toallow Llama 2 tobemorewidelyusableacrosstasks(e.g.,itcanbebetterusedforhate
+speechclassification),whileavoidingthepotentialfortheaccidentaldemographicerasuresometimescaused
+byover-scrubbing.
+
+Query: What is the main contribution of the Llama model?
+
+Response: The main
+contributions of Llamas are:
+• The
+lm-model is a
+proper
+pretrained
+program. It
+is
+a
+good
+prepared
+language
+for
+learning
+and for learning
+in
+English.• It is
+an
+excellent
+training
+tool. Its
+use is not limited to learning in
+Spanish. (See Section 4.)• Llamas are
+also
+used for training in English. They are also used for teaching
+literature in Spanish. These
+are
+important
+as
+we
+have
+learned to use
+them in a variety of
+other
+ways.
+Latency: 3.31 seconds
+----------------------------------------
+# chunk_text_by_token
+Question: What is the main contribution of the Llama model?
+Response: Chunk of text:  (Section 3); and safety (Section 4).
+Ethical Considerations and Limitations (Section 5.2)
+Llama 2 is a new technology that carries risks with use. Testing conducted to date has been in
+English, and has notcovered, nor could it coverall scenarios. For these reasons, aswith all LLMs,
+Llama 2’s potential outputs cannot be predicted in advance, and the model may in some instances
+produceinaccurateorobjectionableresponsestouserprompts. Therefore,beforedeployingany
+applications of Llama 2, developers should perform safety testing and tuning tailored to their
+specific applications of the model. Please see the Responsible Use Guide available available at
+https://ai.meta.com/llama/responsible-user-guide
+Table 52: Model card for Llama 2.
+77
+
+Query: What is the main contribution of the Llama model?
+
+Response: This question is not intended to be a substitute for the advice of a qualified
+doctor or other qualified health care professional. If you have any questions, please contact your
+health care provider.
+Latency: 2.78 seconds
+----------------------------------------
+# chunk_text
+Question: What is the main contribution of the Llama model?
+Response: Chunk of text:  (Section 3); and safety (Section 4).
+Ethical Considerations and Limitations (Section 5.2)
+Llama 2 is a new technology that carries risks with use. Testing conducted to date has been in
+English, and has notcovered, nor could it coverall scenarios. For these reasons, aswith all LLMs,
+Llama 2’s potential outputs cannot be predicted in advance, and the model may in some instances
+produceinaccurateorobjectionableresponsestouserprompts. Therefore,beforedeployingany
+applications of Llama 2, developers should perform safety testing and tuning tailored to their
+specific applications of the model. Please see the Responsible Use Guide available available at
+https://ai.meta.com/llama/responsible-user-guide
+Table 52: Model card for Llama 2.
+77
+
+Query: What is the main contribution of the Llama model?
+
+Response: This question is not intended to be a substitute for the advice of a qualified
+doctor or other qualified health care professional. If you have any questions, please contact your
+health care provider.
+Latency: 3.09 seconds
+----------------------------------------
+#chunk_text_by_sentence
+Question: What is the main contribution of the Llama model?
+Response: Chunk of text: Particularly, Llama 2-Chat 7B model outperforms
+MPT-7B-chaton60%oftheprompts. Llama 2-Chat 34Bhasanoverallwinrateofmorethan75%against
+equivalently sized Vicuna-33B and Falcon 40B models. 18Figure12: Humanevaluationresults forLlama 2-Chat modelscomparedtoopen-andclosed-sourcemodels
+across ~4,000 helpfulness prompts with three raters per prompt. Thelargest Llama 2-Chat modeliscompetitivewithChatGPT. Llama 2-Chat 70Bmodelhasawinrateof
+36% and a tie rate of 31.5% relative to ChatGPT. Llama 2-Chat 70B model outperforms PaLM-bison chat
+model by a large percentage on our prompt set. More results and analysis is available in Section A.3.7. Inter-Rater Reliability (IRR). In our human evaluations, three different annotators provided independent
+assessments for each model generation comparison. High IRR scores (closer to 1.0) are typically seen as
+better from a data quality perspective, however, context is important. Highly subjective tasks like evaluating
+the overall helpfulness of LLM generations will usually have lower IRR scores than more objective labelling
+tasks. There arerelativelyfewpublicbenchmarksfor thesecontexts, sowefeelsharing ouranalysis herewill
+benefit the research community. We used Gwet’s AC1/2 statistic (Gwet, 2008, 2014) to measure inter-rater reliability (IRR), as we found it to
+bethemoststablemetricacrossdifferentmeasurementscenarios. Onthe7-pointLikertscalehelpfulness
+taskthatisusedinouranalysis,Gwet’sAC2scorevariesbetween 0.37and0.55dependingonthespecific
+modelcomparison. Weseescoresonthelowerendofthatrangeforratingsfrommodelcomparisonswith
+similar win rates to each other (like the Llama 2-Chat -70B-chat vs. ChatGPT comparison). We see scores on
+thehigherendofthatrangeforratingsfrommodelcomparisonswithamoreclearwinner(likethe Llama
+2-Chat-34b-chat vs. Falcon-40b-instruct). Limitations of human evaluations. While our results indicate that Llama 2-Chat is on par with ChatGPT
+on human evaluations, it is important to note that human evaluations have several limitations. •Byacademicandresearchstandards,wehavealargepromptsetof4kprompts. However,itdoesnotcover
+real-world usage of these models, which will likely cover a significantly larger number of use cases. •Diversity of the prompts could be another factor in our results. For example, our prompt set does not
+include any coding- or reasoning-related prompts. •We only evaluate the final generation of a multi-turn conversation. A more interesting evaluation could be
+to ask the models to complete a task and rate the overall experience with the model over multiple turns. •Humanevaluationforgenerativemodelsisinherentlysubjectiveandnoisy. Asaresult,evaluationona
+different set of prompts or with different instructions could result in different results. 194 Safety
+WARNING: this section contains examples of text that may be considered unsafe, offensive, or upsetting. In this section, we dive deeper into the important topic of safety measurements and mitigations. We first
+discussoursafetyinvestigationsintopretrainingdataandpretrainedmodels(Section4.1). Next,wedescribe
+theprocessofoursafetyalignment(Section4.2),explaininghowwecollectedsafety-relatedannotationsand
+utilizedSFTandRLHF,andpresentexperimentalresults. Then,wediscusstheredteamingweperformedto
+furtherunderstandandimprovemodelsafety(Section4.3). Finally,wepresentquantitativesafetyevaluations
+ofLlama 2-Chat (Section 4.4). We also share a model card in the Appendix, in Table 52. 4.1 Safety in Pretraining
+It is important to understand what is in the pretraining data both to increase transparency and to shed
+lightonrootcausesofpotentialdownstreamissues,suchaspotentialbiases. Thiscaninformwhat,ifany,
+downstream mitigations to consider, and help guide appropriate model use. In this section, we analyze the
+pretraining datafor distributionsof languages,demographic representations,and toxicity. Wealso present
+the results of testing the pretrained models on existing safety benchmarks. Steps Taken to Pretrain Responsibly. We followed Meta’s standard privacy and legal review processes for
+each dataset used in training. We did not use any Meta user data in training. We excluded data from certain
+sitesknowntocontainahighvolumeofpersonalinformationaboutprivateindividuals. Wemadeabest
+effort to train our models efficiently to reduce the carbon footprint of pretraining (Section 2.2.1). Sharing our
+modelsbroadlywillreducetheneedforotherstotrainsimilarmodels. Noadditionalfilteringwasconducted
+onthedatasets,toallow Llama 2 tobemorewidelyusableacrosstasks(e.g.,itcanbebetterusedforhate
+speechclassification),whileavoidingthepotentialfortheaccidentaldemographicerasuresometimescaused
+byover-scrubbing.
+
+Query: What is the main contribution of the Llama model?
+
+Response: The main
+contributor to our study is our research team at the University of California, Los Angeles (UCLA). The
+research team is led by Dr. Michael J. Pfeiffer, Ph.D., Professor of Computer Science at UCLA
+and a co-author of our paper, “The Importance of Plurality in Pluralism.” The study was funded by the National Institutes of Health (NIH) and the U.S. Centers for Disease Control and Prevention (CDC)
+as well as the American Association for the Advancement of Science (AAAS). This research was supported in part by grants from the NIH, the Department of Homeland Security (DHS), the Office of Management and Budget (OMB),
+Department of Energy (DOE), and National Science Foundation (NSF).
+Latency: 54.02 seconds
+----------------------------------------
+Question: What is the main contribution of the Llama model?
+Response: Chunk of text: Particularly, Llama 2-Chat 7B model outperforms
+MPT-7B-chaton60%oftheprompts. Llama 2-Chat 34Bhasanoverallwinrateofmorethan75%against
+equivalently sized Vicuna-33B and Falcon 40B models. 18Figure12: Humanevaluationresults forLlama 2-Chat modelscomparedtoopen-andclosed-sourcemodels
+across ~4,000 helpfulness prompts with three raters per prompt. Thelargest Llama 2-Chat modeliscompetitivewithChatGPT. Llama 2-Chat 70Bmodelhasawinrateof
+36% and a tie rate of 31.5% relative to ChatGPT. Llama 2-Chat 70B model outperforms PaLM-bison chat
+model by a large percentage on our prompt set. More results and analysis is available in Section A.3.7. Inter-Rater Reliability (IRR). In our human evaluations, three different annotators provided independent
+assessments for each model generation comparison. High IRR scores (closer to 1.0) are typically seen as
+better from a data quality perspective, however, context is important. Highly subjective tasks like evaluating
+the overall helpfulness of LLM generations will usually have lower IRR scores than more objective labelling
+tasks. There arerelativelyfewpublicbenchmarksfor thesecontexts, sowefeelsharing ouranalysis herewill
+benefit the research community. We used Gwet’s AC1/2 statistic (Gwet, 2008, 2014) to measure inter-rater reliability (IRR), as we found it to
+bethemoststablemetricacrossdifferentmeasurementscenarios. Onthe7-pointLikertscalehelpfulness
+taskthatisusedinouranalysis,Gwet’sAC2scorevariesbetween 0.37and0.55dependingonthespecific
+modelcomparison. Weseescoresonthelowerendofthatrangeforratingsfrommodelcomparisonswith
+similar win rates to each other (like the Llama 2-Chat -70B-chat vs. ChatGPT comparison). We see scores on
+thehigherendofthatrangeforratingsfrommodelcomparisonswithamoreclearwinner(likethe Llama
+2-Chat-34b-chat vs. Falcon-40b-instruct). Limitations of human evaluations. While our results indicate that Llama 2-Chat is on par with ChatGPT
+on human evaluations, it is important to note that human evaluations have several limitations. •Byacademicandresearchstandards,wehavealargepromptsetof4kprompts. However,itdoesnotcover
+real-world usage of these models, which will likely cover a significantly larger number of use cases. •Diversity of the prompts could be another factor in our results. For example, our prompt set does not
+include any coding- or reasoning-related prompts. •We only evaluate the final generation of a multi-turn conversation. A more interesting evaluation could be
+to ask the models to complete a task and rate the overall experience with the model over multiple turns. •Humanevaluationforgenerativemodelsisinherentlysubjectiveandnoisy. Asaresult,evaluationona
+different set of prompts or with different instructions could result in different results. 194 Safety
+WARNING: this section contains examples of text that may be considered unsafe, offensive, or upsetting. In this section, we dive deeper into the important topic of safety measurements and mitigations. We first
+discussoursafetyinvestigationsintopretrainingdataandpretrainedmodels(Section4.1). Next,wedescribe
+theprocessofoursafetyalignment(Section4.2),explaininghowwecollectedsafety-relatedannotationsand
+utilizedSFTandRLHF,andpresentexperimentalresults. Then,wediscusstheredteamingweperformedto
+furtherunderstandandimprovemodelsafety(Section4.3). Finally,wepresentquantitativesafetyevaluations
+ofLlama 2-Chat (Section 4.4). We also share a model card in the Appendix, in Table 52. 4.1 Safety in Pretraining
+It is important to understand what is in the pretraining data both to increase transparency and to shed
+lightonrootcausesofpotentialdownstreamissues,suchaspotentialbiases. Thiscaninformwhat,ifany,
+downstream mitigations to consider, and help guide appropriate model use. In this section, we analyze the
+pretraining datafor distributionsof languages,demographic representations,and toxicity. Wealso present
+the results of testing the pretrained models on existing safety benchmarks. Steps Taken to Pretrain Responsibly. We followed Meta’s standard privacy and legal review processes for
+each dataset used in training. We did not use any Meta user data in training. We excluded data from certain
+sitesknowntocontainahighvolumeofpersonalinformationaboutprivateindividuals. Wemadeabest
+effort to train our models efficiently to reduce the carbon footprint of pretraining (Section 2.2.1). Sharing our
+modelsbroadlywillreducetheneedforotherstotrainsimilarmodels. Noadditionalfilteringwasconducted
+onthedatasets,toallow Llama 2 tobemorewidelyusableacrosstasks(e.g.,itcanbebetterusedforhate
+speechclassification),whileavoidingthepotentialfortheaccidentaldemographicerasuresometimescaused
+byover-scrubbing.
+
+Query: What is the main contribution of the Llama model?
+
+Response: The main
+contributions of Llamas are:
+• The
+lm-model is a
+proper
+pretrained
+program. It
+is
+a
+good
+prepared
+language
+for
+learning
+and for learning
+in
+English.• It is
+an
+excellent
+training
+tool. Its
+use is not limited to learning in
+Spanish. (See Section 4.)• Llamas are
+also
+used for training in English. They are also used for teaching
+literature in Spanish. These
+are
+important
+as
+we
+have
+learned to use
+them in a variety of
+other
+ways.
+Latency: 0.00 seconds
+----------------------------------------

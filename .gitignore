@@ -9,9 +9,5 @@ __pycache__/
 .env
 *.env
 
-# Ignore log files or generated files
+# Ignore log files
 *.log
-*.txt
-
-# Ignore SQLite database files if you don't want to commit them
-*.db
