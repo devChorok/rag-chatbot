@@ -5,7 +5,7 @@ url = 'http://127.0.0.1:5000/query'
 
 # Define the query you want to send
 data = {
-    'query': 'What is the main contribution of the Llama model?'
+    'query': 'What is the main contribution of the Llama model to the field of AI?'
 }
 
 # Send the POST request

@@ -1,6 +1,6 @@
 import sqlite3
 from embeddings import encode_chunks, encode_query, similarity
-from chunking import extract_text_from_pdf, chunk_text,chunk_text_by_sentence,chunk_text_by_token
+from chunking import extract_text_from_pdf, chunk_text,chunk_text_by_sentence,chunk_text_by_token, sliding_window_chunking
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Load and chunk the paper
@@ -8,7 +8,7 @@ text = extract_text_from_pdf('llama2_paper.pdf')
 
 # Load model and tokenizer
 model_name = "facebook/opt-125m"  # Replace with a suitable model name
-chunks = chunk_text_by_sentence(text)
+chunks = sliding_window_chunking(text)
 
 model = AutoModelForCausalLM.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
