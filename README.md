@@ -1,7 +1,8 @@
 # How to
-install dependencies in requirements.txt
-run server by running : python script/rest_server.py
-ask queries by running : python script/request.py
+- install dependencies in requirements.txt
+- instantiate database by running : python script/init_db.py
+- run server by running : python script/rest_server.py
+- with the server running, ask queries by running : python script/request.py
 
 
 # Findings on Chunking Methods and Latency
